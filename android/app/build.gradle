@@ -1,7 +1,0 @@
-plugins {
-    id "com.android.application"
-}
-android {
-    namespace "com.example.fama_esmeralda_app"
-    compileSdkVersion 33
-}
