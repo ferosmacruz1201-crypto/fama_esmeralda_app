@@ -4,16 +4,10 @@ workflows:
     instance_type: mac_mini_m2
     environment:
       flutter: stable
-    triggering:
-      events:
-        - push
     scripts:
-      - name: Get dependencies
+      - name: Initialize project structure
         script: |
-          flutter pub get
-      - name: Initialize Android platform
-        script: |
-          flutter create . --platforms=android
+          flutter create . --org com.famaesmeralda --project-name fama_esmeralda_app
       - name: Build APK
         script: |
           flutter build apk --release
