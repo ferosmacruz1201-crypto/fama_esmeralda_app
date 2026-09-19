@@ -5,9 +5,13 @@ workflows:
     environment:
       flutter: stable
     scripts:
-      - name: Initialize project structure
+      - name: Create Flutter project structure
         script: |
-          flutter create . --org com.famaesmeralda --project-name fama_esmeralda_app
+          cd ..
+          flutter create temp_app --org com.famaesmeralda --project-name fama_esmeralda_app
+          cp -r temp_app/android fama_esmeralda_app/
+          cp -r temp_app/ios fama_esmeralda_app/
+          cd fama_esmeralda_app
       - name: Build APK
         script: |
           flutter build apk --release
